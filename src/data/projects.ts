@@ -4,6 +4,7 @@ export type Project = {
   role: string;
   description: string;
   techStack: string[];
+  imageUrl: string;
   liveUrl?: string;
   githubUrl?: string;
 };
@@ -15,7 +16,8 @@ export const projects: Project[] = [
     role: "Full Stack Developer",
     description: "A comprehensive chess application focusing on complex database management for chess moves and player statistics.",
     techStack: ["PostgreSQL", "Express", "React", "Node.js", "Chess.js"],
-    liveUrl: "https://chesstify-demo.com", // Placeholder
+    imageUrl: "", // Placeholder: Minimalist structure/chess
+    liveUrl: "https://chesstify-demo.com", 
     githubUrl: "https://github.com/dzakyadr/chesstify",
   },
   {
@@ -24,6 +26,7 @@ export const projects: Project[] = [
     role: "Frontend Developer & PM",
     description: "A professional corporate website handling real-world client requirements from initial design to final deployment.",
     techStack: ["Next.js", "Tailwind CSS", "Vercel", "Figma"],
-    liveUrl: "https://law-institution-demo.com", // Placeholder
+    imageUrl: "", // Placeholder: Scale of justice/pillars
+    liveUrl: "https://law-institution-demo.com", 
   },
 ];

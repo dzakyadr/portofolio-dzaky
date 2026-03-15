@@ -5,7 +5,7 @@ import { experiences } from "@/data/experience";
 
 export function Experience() {
   return (
-    <section id="experience" className="py-24">
+    <section id="experience" className="py-24 bg-transparent relative z-10">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -14,8 +14,8 @@ export function Experience() {
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 flex items-center gap-4">
-            <span className="text-sky-500 font-mono text-xl">04.</span> Experience
+          <h2 className="text-4xl md:text-5xl font-serif tracking-tight mb-4 flex items-center gap-4">
+            <span className="text-accent font-mono text-xl">04.</span> Experience
             <div className="h-[1px] bg-foreground/20 flex-grow ml-4 max-w-xs"></div>
           </h2>
         </motion.div>
@@ -42,16 +42,16 @@ export function Experience() {
                 </div>
                 
                 <div className="md:col-span-3">
-                  <h3 className="text-xl font-bold mb-1 text-foreground">
+                  <h3 className="text-2xl font-serif mb-1 text-foreground">
                     {exp.role}
                   </h3>
-                  <div className="text-sky-500 font-medium mb-4">
+                  <div className="text-accent font-sans tracking-wide mb-4">
                     {exp.company}
                   </div>
                   <ul className="space-y-2">
                     {exp.description.map((item, i) => (
-                      <li key={i} className="flex items-start text-foreground/70">
-                        <span className="text-sky-500 mr-2 mt-1.5 opacity-50 text-xs">▹</span>
+                      <li key={i} className="flex items-start text-foreground/80 font-sans">
+                        <span className="text-accent mr-2 mt-1.5 opacity-80 text-xs">▹</span>
                         <span className="leading-relaxed">{item}</span>
                       </li>
                     ))}

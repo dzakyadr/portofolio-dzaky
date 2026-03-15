@@ -5,7 +5,7 @@ import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 bg-foreground/5 dark:bg-foreground/5 relative overflow-hidden">
+    <section id="contact" className="py-24 bg-transparent relative overflow-hidden z-10">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -13,13 +13,13 @@ export function Contact() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <span className="text-sky-500 font-mono text-base mb-4 block">
+          <span className="text-accent font-mono text-base mb-4 block">
             05. What&apos;s Next?
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+          <h2 className="text-5xl md:text-6xl font-serif text-foreground tracking-tight mb-6">
             Get In Touch
           </h2>
-          <p className="text-lg text-foreground/70 mb-10 max-w-xl mx-auto">
+          <p className="text-lg text-foreground/70 mb-10 max-w-xl mx-auto font-sans">
             I&apos;m currently looking for new opportunities, whether it&apos;s a full-time role, internship, or freelance project. 
             My inbox is always open. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
           </p>

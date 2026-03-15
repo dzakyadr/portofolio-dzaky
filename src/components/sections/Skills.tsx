@@ -5,7 +5,7 @@ import { skillCategories } from "@/data/skills";
 
 export function Skills() {
   return (
-    <section id="skills" className="py-24">
+    <section id="skills" className="py-24 bg-transparent relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -14,8 +14,8 @@ export function Skills() {
           transition={{ duration: 0.5 }}
           className="mb-16 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 inline-flex items-center gap-4">
-            <span className="text-sky-500 font-mono text-xl">02.</span> Technical Arsenal
+          <h2 className="text-4xl md:text-5xl font-serif text-foreground tracking-tight mb-4 inline-flex items-center gap-4">
+            <span className="text-accent font-mono text-xl">02.</span> Technical Arsenal
           </h2>
           <p className="text-foreground/60 max-w-2xl mx-auto">
             A comprehensive list of the tools and technologies I use to bring digital products to life.
@@ -32,17 +32,14 @@ export function Skills() {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="bg-foreground/5 dark:bg-foreground/5 rounded-2xl p-8 border border-foreground/10 hover:border-sky-500/50 transition-colors"
             >
-              <h3 className="text-xl font-bold mb-6 text-center">{category.title}</h3>
-              <div className="flex flex-wrap justify-center gap-4">
+              <h3 className="text-xl font-serif mb-6 text-center">{category.title}</h3>
+              <div className="flex flex-wrap justify-center gap-3">
                 {category.skills.map((skill) => (
                   <div
                     key={skill.name}
-                    className="flex flex-col items-center justify-center p-3 rounded-xl hover:bg-foreground/10 transition-colors group cursor-default"
+                    className="px-4 py-2 rounded-[24px] border border-foreground/50 bg-foreground/5 backdrop-blur-sm text-xs md:text-sm font-sans tracking-widest uppercase text-foreground transition-colors hover:bg-foreground/10 cursor-default"
                   >
-                    <skill.icon className="w-8 h-8 mb-2 text-foreground/70 group-hover:text-sky-500 transition-colors" />
-                    <span className="text-xs font-medium text-foreground/80 group-hover:text-foreground transition-colors">
-                      {skill.name}
-                    </span>
+                    {skill.name}
                   </div>
                 ))}
               </div>
