@@ -24,12 +24,22 @@ export function Contact() {
             My inbox is always open. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
           </p>
           
-          <a
-            href="mailto:placeholder@email.com"
-            className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-sky-500 bg-transparent border border-sky-500 rounded-lg transition-all hover:bg-sky-500/10 mb-16"
-          >
-            Say Hello <FiMail className="ml-2" />
-          </a>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-16">
+            <a
+              href="mailto:muhadrian061@gmail.com"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-background bg-accent border border-accent rounded-lg transition-all hover:bg-accent/90 min-w-[200px]"
+            >
+              Email Me <FiMail className="ml-2" />
+            </a>
+            <a
+              href="https://wa.me/6281234567890"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-accent bg-transparent border border-accent rounded-lg transition-all hover:bg-accent/10 min-w-[200px]"
+            >
+              WhatsApp <span className="ml-2 w-4 h-4 font-bold border rounded-full inline-flex items-center justify-center text-[10px]">W</span>
+            </a>
+          </div>
 
           <div className="flex justify-center space-x-6">
             <a

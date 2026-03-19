@@ -2,17 +2,16 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 const navLinks = [
-  { name: "Projects", href: "#projects" },
-  { name: "Skills", href: "#skills" },
-  { name: "Experience", href: "#experience" },
-  { name: "Contact", href: "#contact" },
+  { name: "Resume", href: "/resume" },
+  { name: "Projects", href: "/#projects" },
+  { name: "Skills", href: "/#skills" },
+  { name: "Experience", href: "/#experience" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
 
   React.useEffect(() => {
@@ -35,62 +34,24 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <Link href="/" className="text-xl font-bold tracking-tighter">
-              Dzaky<span className="text-sky-500">.</span>
+              Dzaky<span className="text-accent">.</span>
             </Link>
           </div>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex space-x-8 items-center">
+          {/* Unified Nav for all screens on the right side */}
+          <nav className="flex flex-wrap justify-end gap-2 md:gap-8 items-center max-w-[65%] md:max-w-none">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-xs font-mono tracking-[0.3em] uppercase text-foreground/70 hover:text-accent transition-colors"
+                className="text-[9px] sm:text-[10px] md:text-xs font-mono tracking-[0.1em] md:tracking-[0.3em] uppercase text-foreground/70 hover:text-accent transition-colors text-right"
               >
                 {link.name}
               </Link>
             ))}
           </nav>
-
-          {/* Mobile Nav Toggle */}
-          <div className="md:hidden flex items-center space-x-4">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-md hover:bg-foreground/10 transition-colors text-foreground"
-              aria-label="Toggle Menu"
-            >
-              {isOpen ? (
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-              ) : (
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-              )}
-            </button>
-          </div>
         </div>
       </div>
-
-      {/* Mobile Nav Menu */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          className="md:hidden bg-background border-b border-foreground/10 shadow-lg"
-        >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 rounded-md text-base font-medium text-foreground/80 hover:text-sky-500 hover:bg-sky-500/10 transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
-        </motion.div>
-      )}
     </header>
   );
 }

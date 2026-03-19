@@ -5,9 +5,6 @@ export function Footer() {
         <p className="text-foreground/60 text-sm">
           &copy; {new Date().getFullYear()} Muhammad Dzaky Adrian. All rights reserved.
         </p>
-        <p className="text-foreground/40 text-xs mt-2 font-mono">
-          Built with Next.js & Tailwind CSS
-        </p>
       </div>
     </footer>
   );
