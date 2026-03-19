@@ -1,103 +1,126 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { FiArrowRight } from "react-icons/fi";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import Image from "next/image";
+import CurvedLoop from "@/components/CurvedLoop";
 
 export function Hero() {
-  return (
-    <section className="min-h-screen flex items-center justify-center pt-24 pb-16 relative overflow-hidden bg-transparent">
-      {/* Remove previous solid background gradient to allow ScrollBackground to show */}
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const rotateX = useTransform(mouseY, [-150, 150], [8, -8]);
+  const rotateY = useTransform(mouseX, [-150, 150], [-8, 8]);
 
-      <div className="max-w-7xl w-full mx-auto pr-4 sm:pr-6 lg:pr-8 pl-4 lg:pl-0 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          
-          {/* Left Column: Greeting */}
+  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    const rect = e.currentTarget.getBoundingClientRect();
+    mouseX.set(e.clientX - rect.left - rect.width / 2);
+    mouseY.set(e.clientY - rect.top - rect.height / 2);
+  }
+
+  function handleMouseLeave() {
+    mouseX.set(0);
+    mouseY.set(0);
+  }
+
+  return (
+    <>
+      <section className="min-h-screen flex items-center justify-center pt-24 pb-16 relative overflow-hidden bg-transparent">
+      <div className="max-w-7xl w-full mx-auto px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+          {/* Left Column: Text */}
           <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col space-y-8 lg:col-span-8"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col space-y-8 lg:col-span-7"
           >
-            <div className="space-y-4">
-              <span className="text-accent font-mono text-4xl tracking-[0.2em] uppercase">
-                Hello,
+
+            {/* Hero heading with Brigends */}
+            <div className="flex flex-col">
+              
+              {/* 1. HELLO! (Font Brigends/display, tapi ukuran lebih kecil) */}
+              <span className="text-[clamp(1.5rem,3vw,2.5rem)] font-display text-foreground uppercase mb-2">
+                HELLO!
               </span>
-              <h1 className="text-7xl md:text-8xl lg:text-9xl font-serif text-secondary leading-none ">
-                I'm Dzaky Adrian 
-                <span className="block mt-2 text-secondary text-6xl md:text-7xl lg:text-8xl font-serif">Web Developer.</span>
+
+              {/* 2. NAMA (Font Brigends/display, ukuran paling besar) */}
+              <h1 className="text-[clamp(3rem,8vw,6.5rem)] font-display leading-[0.9] tracking-tight text-foreground uppercase">
+                <span className="text-stroke">I&apos;m{"\u00A0"}Dzaky</span><br />
+                <span className="text-accent">Adrian.</span>
               </h1>
+
+              {/* 3. WEB DEVELOPER (Ditambahkan di bawah nama, font sans rapi) */}
+              <span className="text-lg md:text-xl font-sans tracking-[0.2em] text-foreground uppercase mt-4 font-bold">
+                Web Developer
+              </span>
+              
             </div>
-            
-            <p className="text-lg md:text-xl text-foreground/80 max-w-lg leading-relaxed font-sans">
-              Membangun pengalaman digital yang elegan, memadukan estetika klasik 
-              dengan teknologi modern untuk menciptakan harmoni pada setiap pixel.
+
+            {/* Description with Cormorant */}
+            <p className="text-xl md:text-2xl text-foreground/70 max-w-lg leading-relaxed font-body">
+              Bridging robust backend architecture with elegant frontend design. I build high-performance digital solutions focused on speed, scalability, and seamless user experiences.
             </p>
 
-            <div className="pt-4">
-              <Link
-                href="#projects"
-                className="group inline-flex items-center gap-4 text-sm font-sans tracking-widest uppercase text-foreground hover:text-accent transition-colors pb-2 border-b border-foreground/30 hover:border-accent"
-              >
-                <span>SCROLL!!!</span>
-                
-              </Link>
-            </div>
           </motion.div>
 
-          {/* Right Column: Interactive Photo Card */}
+          {/* Right Column: Photo Card – Textured */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="relative flex justify-center lg:justify-end lg:col-span-4"
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="relative flex justify-center lg:justify-end lg:col-span-5"
           >
-            {/* The structural "pillar" behind the image */}
-            <div className="absolute inset-0 bg-accent/5 rounded-t-full -z-10 transform -translate-y-8 translate-x-4 max-w-[400px] mx-auto lg:mx-0 w-full h-[110%] border border-accent/10"></div>
 
-            <motion.div 
-              className="relative w-full max-w-[360px] aspect-[3/4] group cursor-pointer perspective-1000"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.4 }}
+            {/* Accent square offset behind */}
+            <div className="absolute top-6 left-6 w-full max-w-[340px] h-full border border-accent/30 -z-10" />
+
+            {/* Card */}
+            <motion.div
+              className="relative w-full max-w-[340px] aspect-[3/4] cursor-pointer"
+              style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              transition={{ type: "spring", stiffness: 200, damping: 20 }}
             >
-              {/* Card Container with 3D Rotate effect on Hover */}
-              <motion.div 
-                className="w-full h-full relative preserve-3d transition-transform duration-700 ease-out group-hover:rotate-y-12 group-hover:-rotate-x-5"
-                style={{ transformStyle: "preserve-3d" }}
-              >
-                {/* Decorative border frame that expands on hover */}
-                <div className="absolute -inset-4 border border-accent/30 rounded-sm z-0 transition-all duration-500 ease-out opacity-0 group-hover:opacity-100 group-hover:-inset-6 group-hover:border-accent/60" style={{ transform: "translateZ(-20px)" }}></div>
-                
-                {/* Main Photo Container */}
-                <div className="relative w-full h-full rounded-sm overflow-hidden z-10 shadow-2xl bg-foreground/5 shadow-black/20 dark:shadow-black/50 border border-foreground/10" style={{ transform: "translateZ(20px)" }}>
-                  <Image 
-                    src="" 
-                    alt="Dzaky Adrian"
-                    fill
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 filter sepia-[0.2] group-hover:sepia-0"
-                    priority
-                  />
-                  {/* Subtle noise/texture overlay */}
-                  <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
-                  
-                  {/* Inner classic border */}
-                  <div className="absolute inset-3 border border-background/40 z-20 pointer-events-none transition-all duration-500 group-hover:inset-5"></div>
-                </div>
+              {/* Main photo */}
+              <div className="relative w-full h-full overflow-hidden grain">
+                <Image
+                  src="/images/dean.jpeg"
+                  alt="Dzaky Adrian"
+                  fill
+                  className="object-cover grayscale-[0.4] contrast-110 transition-all duration-700 hover:grayscale-0 hover:scale-105"
+                  priority
+                />
+                {/* Grain texture overlay */}
+                <div
+                  className="absolute inset-0 pointer-events-none z-10 mix-blend-overlay"
+                  style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E")`,
+                    opacity: 0.6,
+                  }}
+                />
+                {/* Accent stripe on bottom */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-accent z-20" />
+                {/* Inner frame */}
+                <div className="absolute inset-3 border border-white/10 z-20 pointer-events-none" />
+              </div>
 
-                {/* Floating classical element (e.g., small emblem or text) */}
-                <div 
-                  className="absolute -bottom-6 -right-6 bg-background border border-accent/30 p-4 rounded-full shadow-xl opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-30 flex items-center justify-center w-24 h-24"
-                  style={{ transform: "translateZ(40px)" }}
-                >
-                  <span className="font-serif italic text-accent text-sm text-center transform -rotate-12">Est.<br/>2024</span>
-                </div>
-              </motion.div>
             </motion.div>
-
           </motion.div>
+
         </div>
       </div>
     </section>
+    {/* Full-width CurvedLoop acting as a transition divider to the next section */}
+    <div className="w-full relative z-20 overflow-hidden bg-transparent py-12">
+      <CurvedLoop 
+        marqueeText={"OPEN ✦ FOR ✦ WORK ✦ OPEN ✦ FOR ✦ WORK ✦".repeat(5)}
+        speed={1.5}
+        curveAmount={30}
+        interactive
+        className="font-sans font-bold text-foreground tracking-widest text-2xl lg:text-3xl"
+      />
+    </div>
+    </>
   );
 }

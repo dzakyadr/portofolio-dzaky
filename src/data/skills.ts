@@ -1,4 +1,5 @@
 import { IconType } from "react-icons";
+import { FaJava } from "react-icons/fa";
 import { 
   SiTypescript, 
   SiJavascript, 
@@ -12,7 +13,10 @@ import {
   SiMongodb, 
   SiGit, 
   SiDocker, 
-  SiFigma 
+  SiFigma,
+  SiCplusplus,
+  SiPhp,
+  SiDjango,
 } from "react-icons/si";
 
 export type SkillCategory = {
@@ -30,23 +34,25 @@ export const skillCategories: SkillCategory[] = [
       { name: "TypeScript", icon: SiTypescript },
       { name: "JavaScript", icon: SiJavascript },
       { name: "Python", icon: SiPython },
+      { name: "Java", icon: FaJava },
+      { name: "C+", icon: SiCplusplus },
+      { name: "PHP", icon: SiPhp},
     ],
   },
   {
-    title: "Frameworks & Libraries",
+    title: "Frameworks and Libraries",
     skills: [
       { name: "Next.js", icon: SiNextdotjs },
       { name: "React", icon: SiReact },
       { name: "Tailwind CSS", icon: SiTailwindcss },
       { name: "Node.js", icon: SiNodedotjs },
-      { name: "Express", icon: SiExpress },
+      { name: "Django", icon: SiDjango },
     ],
   },
   {
-    title: "Databases & Tools",
+    title: "Databases and Tools",
     skills: [
       { name: "PostgreSQL", icon: SiPostgresql },
-      { name: "MongoDB", icon: SiMongodb },
       { name: "Git", icon: SiGit },
       { name: "Docker", icon: SiDocker },
       { name: "Figma", icon: SiFigma },

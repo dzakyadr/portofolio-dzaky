@@ -15,7 +15,7 @@ export function Skills() {
           className="mb-16 text-center"
         >
           <h2 className="text-4xl md:text-5xl font-serif text-foreground tracking-tight mb-4 inline-flex items-center gap-4">
-            <span className="text-accent font-mono text-xl">02.</span> Technical Arsenal
+            Technical Arsenal
           </h2>
           <p className="text-foreground/60 max-w-2xl mx-auto">
             A comprehensive list of the tools and technologies I use to bring digital products to life.

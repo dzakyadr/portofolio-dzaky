@@ -42,7 +42,7 @@ function ProjectCard({ project, index }: { project: any, index: number }) {
       <div className="w-full lg:w-2/5 flex flex-col justify-center space-y-6">
         <div className="space-y-2">
           <span className="text-accent font-mono text-xs tracking-[0.3em] uppercase block mb-2">
-            P.{String(index + 1).padStart(2, '0')} — {project.role}
+            {String(index + 1).padStart(2, '0')} — {project.role}
           </span>
           <h3 className="text-3xl lg:text-4xl font-serif text-foreground leading-tight group-hover:text-accent transition-colors duration-500">
             <Link href={`/projects/${project.slug}`}>
@@ -107,11 +107,8 @@ export function Projects() {
           className="mb-24 flex flex-col md:flex-row items-baseline justify-between gap-8 border-b border-foreground/10 pb-8"
         >
           <h2 className="text-5xl lg:text-6xl font-serif text-foreground tracking-tight">
-            Karya <span className="text-foreground/40 italic">Pilihan</span>
+            Featured Projects
           </h2>
-          <p className="text-accent font-mono text-sm tracking-[0.2em] uppercase max-w-xs text-right">
-            Arsip digital dari proyek-proyek unggulan.
-          </p>
         </motion.div>
 
         {/* Projects List */}

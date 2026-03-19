@@ -14,7 +14,7 @@ export function Contact() {
           transition={{ duration: 0.5 }}
         >
           <span className="text-accent font-mono text-base mb-4 block">
-            05. What&apos;s Next?
+            What&apos;s Next?
           </span>
           <h2 className="text-5xl md:text-6xl font-serif text-foreground tracking-tight mb-6">
             Get In Touch
@@ -42,7 +42,7 @@ export function Contact() {
               <FiGithub className="w-6 h-6" />
             </a>
             <a
-              href="https://linkedin.com/in/dzakyadr"
+              href="https://linkedin.com/in/dzakyadrian"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/50 hover:text-sky-500 transition-colors p-2"

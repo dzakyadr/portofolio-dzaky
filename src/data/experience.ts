@@ -8,13 +8,15 @@ export type ExperienceEntry = {
 
 export const experiences: ExperienceEntry[] = [
   {
-    id: "kkn-it",
-    role: "Head of IT Community Service Program (KKN)",
-    company: "University Student Organization",
-    duration: "2023 - 2024",
+    id: "kkn",
+    role: "Head of Community Service Program (KKN)",
+    company: "Universitas Islam Indonesia",
+    duration: "2025",
     description: [
-      "Led the IT division for the community service program, managing a team to deliver digital solutions for local villages.",
-      "Developed basic informational websites and digital literacy modules for the community.",
+      "Led a multidisciplinary team of 10 students to execute community development programs in Kotabaru, Yogyakarta.",
+      "Managed project timelines and coordinated with village officials to ensure successful program implementation.",
+      "Facilitated educational workshops and infrastructure improvement projects, enhancing community engagement and well-being.",
+      "Resolved conflicts within the team and facilitated effective communication between students and the local community.",
     ],
   },
   {
