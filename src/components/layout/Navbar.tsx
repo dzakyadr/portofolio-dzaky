@@ -39,12 +39,12 @@ export function Navbar() {
           </div>
 
           {/* Unified Nav for all screens on the right side */}
-          <nav className="flex flex-wrap justify-end gap-2 md:gap-8 items-center max-w-[65%] md:max-w-none">
+          <nav className="flex flex-nowrap justify-end gap-2 md:gap-8 items-center max-w-[75%] md:max-w-none overflow-x-auto no-scrollbar">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-[9px] sm:text-[10px] md:text-xs font-mono tracking-[0.1em] md:tracking-[0.3em] uppercase text-foreground/70 hover:text-accent transition-colors text-right"
+                className="text-[10px] sm:text-[11px] md:text-sm font-mono tracking-tighter md:tracking-[0.2em] whitespace-nowrap uppercase text-foreground/70 hover:text-accent transition-colors"
               >
                 {link.name}
               </Link>

@@ -57,7 +57,7 @@ export function Hero() {
             </div>
 
             {/* Description with Cormorant */}
-            <p className="text-xl md:text-2xl text-foreground/70 max-w-lg leading-relaxed font-body">
+            <p className="text-sm md:text-xl text-foreground/70 max-w-lg leading-relaxed font-body">
               Bridging robust backend architecture with elegant frontend design. I build high-performance digital solutions focused on speed, scalability, and seamless user experiences.
             </p>
 
@@ -118,7 +118,7 @@ export function Hero() {
         speed={1.5}
         curveAmount={30}
         interactive
-        className="font-sans font-bold text-foreground tracking-widest text-2xl lg:text-3xl"
+        className="font-sans font-bold text-foreground tracking-widest text-5xl lg:text-6xl"
       />
     </div>
     </>

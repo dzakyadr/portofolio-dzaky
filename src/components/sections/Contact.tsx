@@ -32,7 +32,7 @@ export function Contact() {
               Email Me <FiMail className="ml-2" />
             </a>
             <a
-              href="https://wa.me/6281234567890"
+              href="https://wa.me/6285712437633"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-accent bg-transparent border border-accent rounded-lg transition-all hover:bg-accent/10 min-w-[200px]"
