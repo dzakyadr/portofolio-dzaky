@@ -37,7 +37,7 @@ export function Contact() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-accent bg-transparent border border-accent rounded-lg transition-all hover:bg-accent/10 min-w-[200px]"
             >
-              WhatsApp <span className="ml-2 w-4 h-4 font-bold border rounded-full inline-flex items-center justify-center text-[10px]">W</span>
+              WhatsApp
             </a>
           </div>
 

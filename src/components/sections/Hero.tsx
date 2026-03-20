@@ -72,11 +72,11 @@ export function Hero() {
           >
 
             {/* Accent square offset behind */}
-            <div className="absolute top-6 left-6 w-full max-w-[340px] h-full border border-accent/30 -z-10" />
+            <div className="absolute top-4 left-4 md:top-6 md:left-6 w-full max-w-[260px] md:max-w-[340px] h-full border border-accent/30 -z-10" />
 
             {/* Card */}
             <motion.div
-              className="relative w-full max-w-[340px] aspect-[3/4] cursor-pointer"
+              className="relative w-full max-w-[260px] md:max-w-[340px] aspect-[3/4] cursor-pointer mx-auto lg:mx-0"
               style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
@@ -116,7 +116,7 @@ export function Hero() {
       <CurvedLoop 
         marqueeText={"OPEN ✦ FOR ✦ WORK ✦ OPEN ✦ FOR ✦ WORK ✦".repeat(5)}
         speed={1.5}
-        curveAmount={30}
+        curveAmount={120}
         interactive
         className="font-sans font-bold text-foreground tracking-widest text-5xl lg:text-6xl"
       />

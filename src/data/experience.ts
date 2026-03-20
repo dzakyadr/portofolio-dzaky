@@ -21,7 +21,7 @@ export const experiences: ExperienceEntry[] = [
   },
   {
     id: "pdd-staff",
-    role: "Publication, Decoration, and Documentation (PDD) Staff",
+    role: "Publication, Design, and Documentation (PDD) Staff",
     company: "Campus Event Committee",
     duration: "2023",
     description: [
