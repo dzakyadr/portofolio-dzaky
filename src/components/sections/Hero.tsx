@@ -8,8 +8,8 @@ const CurvedLoop = dynamic(() => import("@/components/CurvedLoop"), {
   ssr: false,
 });
 
-// Shared transition for entrance
-const ease = "easeOut";
+// Shared easing — typed as literal to satisfy Framer Motion's Easing type
+const EASE = "easeOut" as const;
 
 export function Hero() {
   const prefersReducedMotion = useReducedMotion();
@@ -34,7 +34,7 @@ export function Hero() {
   const fadeUp = (delay: number) => ({
     initial: prefersReducedMotion ? {} : { opacity: 0, y: 30, filter: "blur(14px)" },
     animate: { opacity: 1, y: 0, filter: "blur(0px)" },
-    transition: { duration: 0.8, delay: 0.5 + delay, ease },
+    transition: { duration: 0.8, delay: 0.5 + delay, ease: EASE },
   });
 
   return (
@@ -107,7 +107,7 @@ export function Hero() {
                 className="relative w-full max-w-[260px] md:max-w-[340px] mx-auto lg:mx-0"
                 initial={prefersReducedMotion ? {} : { opacity: 0, y: 40, filter: "blur(10px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                transition={{ duration: 1, delay: 1, ease }}
+                transition={{ duration: 1, delay: 1, ease: EASE }}
               >
                 {/* Offset shadow card behind */}
                 <div
