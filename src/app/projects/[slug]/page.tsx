@@ -25,7 +25,7 @@ export default async function ProjectDetailPage({
   const { details } = project;
 
   return (
-    <main className="min-h-screen relative pt-32 pb-32 grain overflow-hidden">
+    <main className="project-detail min-h-screen relative pt-32 pb-32 grain overflow-hidden">
 
       {/* Back Navigation */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-16 relative z-10">

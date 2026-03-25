@@ -96,7 +96,7 @@ export const projects: Project[] = [
     slug: "law-institution-website",
     role: "Frontend Developer & Project Manager",
     description: "A professional institutional website for Amarta Artha Institute, handling real-world client requirements from discovery to final deployment.",
-    techStack: ["HTML5", "Tailwind CSS", "JavaScript", "Font Awesome", "Google Fonts"],
+    techStack: ["HTML5", "Tailwind CSS", "JavaScript"],
     imageUrl: "/images/institute.png",
     year: "2025–2026",
     details: {
@@ -117,7 +117,7 @@ export const projects: Project[] = [
           layer: "Frontend",
           stack: [
             { name: "HTML5 & Tailwind CSS", description: "Semantic markup with a utility-first CSS framework for rapid, consistent styling across all 4 pages." },
-            { name: "Vanilla JavaScript", description: "Handles interactive elements: mobile nav toggles, scroll effects, and micro-animations without any framework overhead." }
+            { name: "JavaScript", description: "Handles interactive elements: mobile nav toggles, scroll effects, and micro-animations without any framework overhead." }
           ]
         },
         {
