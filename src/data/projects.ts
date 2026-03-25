@@ -12,6 +12,9 @@ export type ProjectDetails = {
   }[];
   technicalAchievement: string;
   galleryImages: string[];
+  // Optional extended fields for non-Chesstify projects
+  designHighlights?: string[];
+  challenges?: { challenge: string; solution: string }[];
 };
 
 export type Project = {
@@ -23,6 +26,7 @@ export type Project = {
   imageUrl: string;
   liveUrl?: string;
   githubUrl?: string;
+  year?: string;
   details?: ProjectDetails;
 };
 
@@ -34,7 +38,7 @@ export const projects: Project[] = [
     description: "A comprehensive chess application focusing on complex database management for chess moves and player statistics.",
     techStack: ["PostgreSQL", "Python", "HTML", "CSS", "JavaScript"],
     imageUrl: "/images/chess.jpg",
-    liveUrl: "https://chesstify-demo.com", 
+    liveUrl: "https://chesstify-demo.com",
     githubUrl: "https://github.com/dzakyadr/chesstify",
     details: {
       overview: {
@@ -90,10 +94,65 @@ export const projects: Project[] = [
   {
     title: "Law Institution Website",
     slug: "law-institution-website",
-    role: "Frontend Developer & PM",
-    description: "A professional corporate website handling real-world client requirements from initial design to final deployment.",
-    techStack: ["HTML", "CSS", "JavaScript"],
+    role: "Frontend Developer & Project Manager",
+    description: "A professional institutional website for Amarta Artha Institute, handling real-world client requirements from discovery to final deployment.",
+    techStack: ["HTML5", "Tailwind CSS", "JavaScript", "Font Awesome", "Google Fonts"],
     imageUrl: "/images/institute.png",
-    liveUrl: "https://law-institution-demo.com", 
+    year: "2025–2026",
+    details: {
+      overview: {
+        tagline: "Cultivating Leadership. Advancing Knowledge. Creating Enduring Value.",
+        type: "Freelance / Client Project",
+        coreIdentity: "Amarta Artha Institute is a strategic leadership and research institute based in Yogyakarta, Indonesia. I was commissioned to build their complete institutional web presence from the ground up — spanning branding, information architecture, and frontend implementation.",
+        mainProblem: "The client had no existing digital presence and no design brief. As the sole point of contact, I held discovery and review meetings to align on content, structure, and design direction — translating non-technical requirements into a fully working web product through iterative revision cycles."
+      },
+      keyFeatures: [
+        { title: "Landing Page", description: "Hero section with a full-screen background image, institute tagline, and dual CTA buttons. Includes a profile section, program highlight cards (Strategic Capacity Building + Konsultasi Umum), and a Google Maps contact section." },
+        { title: "About Page", description: "Full company story, philosophy (Amarta + Artha meaning), vision & mission, 4 strategic pillars, leadership team profiles, and a 2030 vision section." },
+        { title: "Services Page", description: "Two-column layout separating Strategic Capacity Building and Executive Mentorship. Both use a custom card component with hover effects, a dark research summary card, and WhatsApp CTAs." },
+        { title: "Portfolio Page", description: "Showcases the institute's client work and organizational impact in a structured, visually engaging layout." }
+      ],
+      architecture: [
+        {
+          layer: "Frontend",
+          stack: [
+            { name: "HTML5 & Tailwind CSS", description: "Semantic markup with a utility-first CSS framework for rapid, consistent styling across all 4 pages." },
+            { name: "Vanilla JavaScript", description: "Handles interactive elements: mobile nav toggles, scroll effects, and micro-animations without any framework overhead." }
+          ]
+        },
+        {
+          layer: "Design System",
+          stack: [
+            { name: "Custom Color Tokens", description: "Primary (#376171) and secondary (#FFB933) color tokens applied site-wide for brand consistency." },
+            { name: "Image-Top Card System", description: "Cards feature a hero photo, icon badge, title, and description for visual storytelling, inspired by modern SaaS product pages." }
+          ]
+        },
+        {
+          layer: "Integrations",
+          stack: [
+            { name: "Google Maps Embed", description: "Embedded interactive map for the institute's physical location in the contact section." },
+            { name: "WhatsApp API & Google Forms", description: "Conversion-focused CTAs drive direct user action for program inquiries." }
+          ]
+        }
+      ],
+      technicalAchievement: "The greatest challenge was acting as both developer and project manager without a design brief. By running structured discovery sessions and iterating rapidly through revision cycles, I delivered a complete, polished, multi-page institutional website entirely from scratch — from zero assets to final sign-off.",
+      galleryImages: [
+        "/images/institute.png",
+        "/images/institute.png",
+        "/images/institute.png"
+      ],
+      designHighlights: [
+        "Image-top card system — cards feature a hero photo, icon badge, title, and description for visual storytelling",
+        "Micro-animations — hover lift, scale-on-hover images, icon transitions throughout",
+        "Mobile-first responsive — grid collapses gracefully across all breakpoints",
+        "Conversion-focused CTAs — WhatsApp API, Google Forms, and anchor links drive user action",
+        "Consistent design system — primary and secondary color tokens applied site-wide"
+      ],
+      challenges: [
+        { challenge: "Client had no design brief", solution: "Ran structured discovery sessions to extract visual preferences and content goals before writing a single line of code" },
+        { challenge: "Services page felt cluttered", solution: "Restructured into two distinct columns with a shared outer container for visual breathing room" },
+        { challenge: "Cards lacked visual hook", solution: "Introduced image-top card design inspired by modern SaaS product pages for stronger visual storytelling" }
+      ]
+    }
   },
 ];

@@ -132,7 +132,7 @@ export function Hero() {
                     <div className="border border-foreground/10 relative overflow-hidden">
                       <div className="relative aspect-[3/4] overflow-hidden">
                         <Image
-                          src="/images/dean.jpeg"
+                          src="/images/dzaky.jpeg"
                           alt="Dzaky Adrian"
                           fill
                           className="object-cover grayscale-[0.5] contrast-125 brightness-90 transition-all duration-700 hover:grayscale-0 hover:scale-105"
@@ -151,13 +151,6 @@ export function Hero() {
                           style={{ background: "radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.55) 100%)" }}
                         />
                         <div className="absolute top-0 left-0 right-0 h-[2px] bg-accent z-30" />
-                      </div>
-                      <div
-                        className="px-3 py-2 flex items-center justify-between"
-                        style={{ background: "rgba(255,255,255,0.02)" }}
-                      >
-                        <span className="text-[9px] font-mono tracking-[0.35em] uppercase text-foreground/40">DZAKY.ADR</span>
-                        <span className="text-[9px] font-mono tracking-widest text-foreground/25">2025</span>
                       </div>
                     </div>
                   </div>
