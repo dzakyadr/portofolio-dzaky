@@ -96,7 +96,7 @@ export function Hero() {
                 className="text-sm md:text-sm text-white max-w-lg leading-relaxed font-body"
                 {...fadeUp(0.34)}
               >
-                Bridging robust backend architecture with elegant frontend design. I build high-performance digital solutions focused on speed, scalability, and seamless user experiences.
+                I build high-performance digital solutions focused on speed, scalability, and seamless user experiences.
               </motion.p>
 
             </div>
