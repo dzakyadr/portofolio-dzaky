@@ -36,7 +36,7 @@ export const projects: Project[] = [
     slug: "chesstify",
     role: "Full Stack Developer",
     description: "A comprehensive chess application focusing on complex database management for chess moves and player statistics.",
-    techStack: ["PostgreSQL", "Python", "HTML", "CSS", "JavaScript"],
+    techStack: ["Django", "PostgreSQL", "Python", "HTML", "CSS", "JavaScript"],
     imageUrl: "/images/chess.jpg",
     liveUrl: "https://chesstify-demo.com",
     githubUrl: "https://github.com/dzakyadr/chesstify",
@@ -86,8 +86,8 @@ export const projects: Project[] = [
       technicalAchievement: "The biggest technical challenge and achievement of this project was successfully bridging static, text-based PGN data in the database with a highly dynamic, interactive frontend chessboard, while simultaneously running a heavy background calculation engine (Stockfish) without compromising web performance or user experience.",
       galleryImages: [
         "/images/chess.jpg",
-        "/images/chess.jpg",
-        "/images/chess.jpg"
+        "/images/dashboard.png",
+        "/images/detail.png"
       ]
     }
   },
@@ -135,11 +135,11 @@ export const projects: Project[] = [
           ]
         }
       ],
-      technicalAchievement: "The greatest challenge was acting as both developer and project manager without a design brief. By running structured discovery sessions and iterating rapidly through revision cycles, I delivered a complete, polished, multi-page institutional website entirely from scratch — from zero assets to final sign-off.",
+      technicalAchievement: "The greatest challenge was acting as both developer and project manager without a design brief. By running structured discovery sessions and iterating rapidly through revision cycles, I delivered a complete, polished, multi-page institutional website entirely from scratch from zero assets to final sign-off.",
       galleryImages: [
         "/images/institute.png",
-        "/images/institute.png",
-        "/images/institute.png"
+        "/images/amarta-porto.png",
+        "/images/amartha2.png"
       ],
       designHighlights: [
         "Image-top card system — cards feature a hero photo, icon badge, title, and description for visual storytelling",

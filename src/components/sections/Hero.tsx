@@ -135,7 +135,7 @@ export function Hero() {
                           src="/images/dzaky.jpeg"
                           alt="Dzaky Adrian"
                           fill
-                          className="object-cover grayscale-[0.5] contrast-125 brightness-90 transition-all duration-700 hover:grayscale-0 hover:scale-105"
+                          className="object-cover transition-all duration-700 hover:scale-105"
                           priority
                         />
                         <div

@@ -87,7 +87,7 @@ export default async function ProjectDetailPage({
               src={details.galleryImages[0]}
               alt={`${project.title} - Main View`}
               fill
-              className="object-cover transition-transform duration-1000 group-hover:scale-105 grayscale-[0.3] hover:grayscale-0"
+              className="object-cover transition-transform duration-1000 group-hover:scale-105"
               priority
             />
           </div>
@@ -97,7 +97,7 @@ export default async function ProjectDetailPage({
                 src={details.galleryImages[1]}
                 alt={`${project.title} - View 2`}
                 fill
-                className="object-cover transition-transform duration-1000 group-hover:scale-105 grayscale-[0.5] hover:grayscale-0"
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
               />
             </div>
             <div className="relative flex-1 group overflow-hidden border border-foreground/10">
@@ -105,7 +105,7 @@ export default async function ProjectDetailPage({
                 src={details.galleryImages[2]}
                 alt={`${project.title} - View 3`}
                 fill
-                className="object-cover transition-transform duration-1000 group-hover:scale-105 grayscale-[0.5] hover:grayscale-0"
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
               />
             </div>
           </div>

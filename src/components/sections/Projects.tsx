@@ -34,7 +34,7 @@ function ProjectCard({ project, index }: { project: any, index: number }) {
           src={project.imageUrl || ""} // fallback
           alt={project.title}
           fill
-          className="object-cover filter grayscale-[0.8] contrast-125 transition-all duration-1000 ease-out group-hover:grayscale-0 group-hover:scale-105"
+          className="object-cover transition-all duration-1000 ease-out group-hover:scale-105"
         />
       </div>
 
