@@ -32,6 +32,78 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Peach Cat Club Shop",
+    slug: "peach-cat-club-shop",
+    role: "Full Stack Developer",
+    description: "A production-ready full-stack e-commerce platform built for my own streetwear brand, covering everything from product discovery to order management.",
+    techStack: ["Laravel 11", "PHP", "React", "TypeScript", "Inertia.js", "Tailwind CSS", "PostgreSQL"],
+    imageUrl: "/images/peachcat.png",
+    githubUrl: "https://github.com/dzakyadr/peach-cat-club-shop",
+    year: "2026",
+    details: {
+      overview: {
+        tagline: "A real streetwear brand deserves a real e-commerce platform.",
+        type: "Personal Project — Production Business Tool",
+        coreIdentity: "Peach Cat Club Shop is a full-stack e-commerce web application I built for my own clothing brand, Peach Cat Club — a streetwear brand rooted in internet culture. The platform handles everything from product discovery to order management and was designed to be production-ready from day one.",
+        mainProblem: "Built end-to-end as both a real business tool and a technical showcase. The core engineering challenge was architecting a reliable, multi-user system that prevents overselling and cross-account data contamination — while keeping the UX frictionless and the admin panel powerful enough for real inventory management."
+      },
+      keyFeatures: [
+        { title: "Storefront & Product Browsing", description: "Responsive storefront with category filtering, individual product detail pages showing images, sizes, and live stock availability. Every view is optimized for conversion — from grid layout to the product detail CTA." },
+        { title: "Cart & Checkout System", description: "Add to cart with real-time stock validation that prevents overselling. Full checkout flow includes a shipping form and triggers an automatic order confirmation email via SMTP Gmail after successful submission." },
+        { title: "Order Tracking — My Orders", description: "Customers can view their full order history and track status progression: Pending → Processing → Shipped → Delivered. Each order entry shows items, quantities, and current status in a clean timeline view." },
+        { title: "Admin Dashboard", description: "Full CRUD for products, variants (size/color), images, categories, and homepage banner carousel. Admins can view all customer orders and update their status. All /admin routes are locked behind a custom role-based middleware." },
+        { title: "Session-Isolated Cart System", description: "Per-user localStorage key-binding ensures cart data never bleeds between different logged-in accounts. Switching users immediately resolves to the correct isolated cart state without any manual cleanup." }
+      ],
+      architecture: [
+        {
+          layer: "Backend Layer",
+          stack: [
+            { name: "Laravel 11 (PHP)", description: "Main server orchestrator handling HTTP routing, ORM operations via Eloquent, business logic, and middleware enforcement. All server-side logic lives in Laravel — no separate REST API needed." },
+            { name: "Laravel Breeze", description: "Session-based authentication system. Login, registration, and password flow handled out of the box, with role-based access control layered on top via custom middleware." }
+          ]
+        },
+        {
+          layer: "Frontend Layer",
+          stack: [
+            { name: "React + TypeScript via Inertia.js", description: "Inertia.js bridges Laravel and React — delivering a SPA-like experience without a separate API. React handles UI rendering and state; Inertia handles page transitions and prop passing from the server." },
+            { name: "Tailwind CSS + Framer Motion", description: "Utility-first styling for rapid, consistent UI. Framer Motion adds polished page transitions and micro-animations throughout the storefront experience." }
+          ]
+        },
+        {
+          layer: "Database Layer",
+          stack: [
+            { name: "PostgreSQL", description: "8-table normalized relational schema: users, products, product_variants, product_images, categories, orders, order_items, and banners. Designed to handle concurrent writes without race conditions on stock fields." }
+          ]
+        },
+        {
+          layer: "Integrations",
+          stack: [
+            { name: "SMTP Gmail (Transactional Email)", description: "Automated order confirmation emails sent immediately after checkout. Configured via Laravel's mail system using Gmail SMTP — no third-party email SaaS required." },
+            { name: "Vite (Asset Bundling)", description: "Fast development HMR and optimized production asset bundling. Works natively with the Laravel + Inertia + React stack." }
+          ]
+        }
+      ],
+      technicalAchievement: "The biggest engineering achievement was building a full production e-commerce system as a solo developer — not a tutorial clone, but a real platform for a real brand. The hardest part was designing the cart isolation system and ensuring stock validation was atomic enough to prevent race conditions between concurrent users.",
+      galleryImages: [
+        "/images/peachcat.png",
+        "/images/product.png",
+        "/images/dashboardpcc.png"
+      ],
+      designHighlights: [
+        "SPA-like experience via Inertia.js — no page reloads, instant navigation between storefront pages",
+        "Real-time stock validation on every cart action — prevents overselling at the database level",
+        "Per-user localStorage key-binding for cart isolation — zero cross-account data bleeding",
+        "Role-based middleware — all /admin routes enforce strict access separation from the server side",
+        "Framer Motion animations — polished micro-interactions and page transitions throughout the storefront"
+      ],
+      challenges: [
+        { challenge: "Cart data bleeding between accounts", solution: "Implemented per-user localStorage key-binding so each account resolves to its own isolated cart namespace, regardless of login state" },
+        { challenge: "Preventing overselling on concurrent adds", solution: "Stock validation is enforced at the database query level on every cart mutation, not just at checkout — ensuring inventory accuracy even under concurrent load" },
+        { challenge: "Admin access control without overcomplicating auth", solution: "Built a lightweight custom EnsureAdminRole middleware that checks a role flag on the user model and redirects non-admins before any controller logic runs" }
+      ]
+    }
+  },
+  {
     title: "Chesstify",
     slug: "chesstify",
     role: "Full Stack Developer",

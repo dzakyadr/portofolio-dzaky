@@ -79,38 +79,47 @@ export default async function ProjectDetailPage({
         </div>
       </div>
 
-      {/* 3-Photo Gallery Grid */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-32 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 h-[500px]">
-          <div className="md:col-span-8 relative h-full group overflow-hidden border border-foreground/10">
-            <Image
-              src={details.galleryImages[0]}
-              alt={`${project.title} - Main View`}
-              fill
-              className="object-cover transition-transform duration-1000 group-hover:scale-105"
-              priority
-            />
-          </div>
-          <div className="md:col-span-4 flex flex-col gap-4 h-full">
-            <div className="relative flex-1 group overflow-hidden border border-foreground/10">
+      {/* 3-Photo Gallery Grid — only rendered when images are available */}
+      {details.galleryImages && details.galleryImages.length > 0 && (
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-32 relative z-10">
+          <div className={`grid gap-4 h-[500px] ${details.galleryImages.length === 1 ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-12'}`}>
+            <div className={`${details.galleryImages.length > 1 ? 'md:col-span-8' : ''} relative h-full group overflow-hidden border border-foreground/10`}>
               <Image
-                src={details.galleryImages[1]}
-                alt={`${project.title} - View 2`}
+                src={details.galleryImages[0]}
+                alt={`${project.title} - Main View`}
                 fill
                 className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                priority
               />
             </div>
-            <div className="relative flex-1 group overflow-hidden border border-foreground/10">
-              <Image
-                src={details.galleryImages[2]}
-                alt={`${project.title} - View 3`}
-                fill
-                className="object-cover transition-transform duration-1000 group-hover:scale-105"
-              />
-            </div>
+            {details.galleryImages.length > 1 && (
+              <div className="md:col-span-4 flex flex-col gap-4 h-full">
+                {details.galleryImages[1] && (
+                  <div className="relative flex-1 group overflow-hidden border border-foreground/10">
+                    <Image
+                      src={details.galleryImages[1]}
+                      alt={`${project.title} - View 2`}
+                      fill
+                      className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                    />
+                  </div>
+                )}
+                {details.galleryImages[2] && (
+                  <div className="relative flex-1 group overflow-hidden border border-foreground/10">
+                    <Image
+                      src={details.galleryImages[2]}
+                      alt={`${project.title} - View 3`}
+                      fill
+                      className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                    />
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
-      </div>
+      )}
+
 
       {/* Overview Context */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-32 relative z-10">
